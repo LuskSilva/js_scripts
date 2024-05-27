@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .especial {
+            background-color: red;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Teste</h1>
+    <h1>Teste</h1>
+    <h1 class="especial">Batata</h1>
+    <h1 class="especial">Cenoura</h1>
+    <h1>Teste</h1>
+
+    <script>
+        function addMultipleEventListener(element, events, fn) {
+            const splitted = events.split(" ")
+
+            splitted.forEach(function (event) {
+                element.addEventListener(event, fn)
+            })
+        }
+
+        const especiais = document.querySelectorAll(".especial")
+
+        especiais.forEach(function (especial) {
+            addMultipleEventListener(especial, "click mouseover", function () {
+                alert("batata")
+            })
+        })
+    </script>
+</body>
+
+</html>
